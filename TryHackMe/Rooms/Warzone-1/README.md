@@ -24,3 +24,5 @@ Inspect the PCAP file and retrieve the artifacts to confirm this alert is **a tr
 11. Now do the same and inspect the traffic from the second downloaded file. Two files will be saved to the same directory. What is the **full file path of the directory and the name of the two files**? *(format: C:\path\file.xyz,C:\path\file.xyz)*
 
 ## 💡 Takeaways
+
+Brim is a very useful start for basic queries, and statistics is a good start within Wireshark as well. Begin narrowing it down by filtering interesting (baseline -> anomalies) (weird spike of traffic) IPs/Domains/Protocols to narrow it down. It took time in this room because I hadn't used Wireshark/Brim in a while
