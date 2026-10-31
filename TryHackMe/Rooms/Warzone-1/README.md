@@ -67,20 +67,20 @@ This made me realize that the highest ROI beginnings are looking at statistics w
 
 
 
-3. What is the **source IP address**? *Enter your answer in a defanged format.*
+2. What is the **source IP address**? *Enter your answer in a defanged format.*
 
 Answer: ```172[.]16[.]1[.]102```
 
 
 
-4. What IP address was the **destination IP** in the alert? *Enter your answer in a defanged format.*
+3. What IP address was the **destination IP** in the alert? *Enter your answer in a defanged format.*
 
 Answer: ```169[.]239[.]128[.]11```
 
 
 
 
-5. Still in VirusTotal, under Community, what **threat group** is attributed to this IP address?
+4. Still in VirusTotal, under Community, what **threat group** is attributed to this IP address?
 
 <img width="481" height="486" alt="Screenshot 2026-10-31 161552" src="https://github.com/user-attachments/assets/bf1cfb7e-1202-4e96-a535-3f0938d3596a" />
 
@@ -92,7 +92,7 @@ Answer: ```TA505```
 
 
 
-6. What is the **malware family**?
+5. What is the **malware family**?
 
 In the same screenshot above
 
@@ -102,7 +102,7 @@ Answer: MirrorBlast
 
 
 
-7. Do a search in VirusTotal for the domain from question 4. What was the majority **file type** listed under Communicating Files?
+6. Do a search in VirusTotal for the domain from question 4. What was the majority **file type** listed under Communicating Files?
 
 <img width="384" height="556" alt="Screenshot 2026-10-31 162006" src="https://github.com/user-attachments/assets/ead83090-072f-41f0-b017-093b1e703da1" />
 
@@ -114,7 +114,7 @@ Answer: ```Windows Installer```
 
 
 
-8. Inspect the web traffic for the flagged IP address; what is the **user-agent** in the traffic?
+7. Inspect the web traffic for the flagged IP address; what is the **user-agent** in the traffic?
 
 Let's look for this on Wireshark flagged IP address as a filter:
 
@@ -132,7 +132,7 @@ Answer: ```REBOL View 2.7.8.3.1```
 
 
 
-9. Retrace the attack; there were multiple IP addresses associated with this attack. What were **two other IP addresses**? *Enter the IP addresses defanged and in numerical order. (format: IPADDR,IPADDR)*
+8. Retrace the attack; there were multiple IP addresses associated with this attack. What were **two other IP addresses**? *Enter the IP addresses defanged and in numerical order. (format: IPADDR,IPADDR)*
 
 Let's filter for HTTP and find the packets with ```Windows Installer``` as User-Agent
 
@@ -148,7 +148,7 @@ Answer: ```185[.]10[.]68[.]235, 192[.]36[.]27[.]92```
 
 
 
-10. What were the **file names of the downloaded files**? *Enter the answer in the order to the IP addresses from the previous question. (format: file.xyz,file.xyz)*
+9. What were the **file names of the downloaded files**? *Enter the answer in the order to the IP addresses from the previous question. (format: file.xyz,file.xyz)*
 
 Let's follow the conversations!
 
@@ -164,7 +164,7 @@ Answer: ```filter.msi,10opd3r_load.msi```
 
 
 
-11. Inspect the traffic for the first downloaded file from the previous question. Two files will be saved to the same directory. What is the **full file path of the directory and the name of the two files**? *(format: C:\path\file.xyz,C:\path\file.xyz)*
+10. Inspect the traffic for the first downloaded file from the previous question. Two files will be saved to the same directory. What is the **full file path of the directory and the name of the two files**? *(format: C:\path\file.xyz,C:\path\file.xyz)*
 
 
 I had to just keep following the conversation to the very end, and holy shit this was hard to see with the eye.
@@ -178,7 +178,7 @@ Answer: ```C:\ProgramData\001\arab.bin, C:\ProgramData\001\arab.exe```
 
 
 
-12. Now do the same and inspect the traffic from the second downloaded file. Two files will be saved to the same directory. What is the **full file path of the directory and the name of the two files**? *(format: C:\path\file.xyz,C:\path\file.xyz)*
+11. Now do the same and inspect the traffic from the second downloaded file. Two files will be saved to the same directory. What is the **full file path of the directory and the name of the two files**? *(format: C:\path\file.xyz,C:\path\file.xyz)*
 
 
 <img width="806" height="50" alt="Screenshot 2026-10-31 164638" src="https://github.com/user-attachments/assets/b2561da8-2579-407e-a226-8a5973ff4211" />
