@@ -5,5 +5,6 @@ Automated IT Offboarding Pipeline, built with PowerShell, Jira REST API v3, and 
 * [Step-1](./Step-1/README.md): Setup Jira
 * [Step-2](./Step-2/README.md): Setup AD
 * [Step-3](./Step-3/README.md): Finalize Script
+* [Step-4](./Step-4/README.md): Entra ID
 * [Scripts](./Scripts/): PowerShell scripts
 * [Takeaways](./Takeaways/README.md): Lessons learned
