@@ -1,8 +1,29 @@
 # Takeaways
 
-Roadblock Faced,What Caused It,The Takeaway / Best Practice
-1. Intermittent 401 Unauthorized Errors,Expired or invalid Jira API tokens.,"Always keep a fresh API token handy, and verify basic authentication headers (Base64 encoding of email + token) before digging into complex logic."
-2. Zero Results in JQL Search,Confusing Jira Service Management (JSM) request types (the portal form) with backend issue types or searching the wrong project key (IO vs KAN).,Use a discovery script to list all project keys and inspect raw issue data with zero filters first to see what Jira actually stores.
-3. Hidden Custom Fields,"The target username field (customfield_10110) was hidden on the customer portal form, making it blank upon submission.","When automating, ensure fields required by your script are either exposed on the portal or populated via automation rules. Always add safety checks (if (-not $Field) { continue }) to prevent script crashes."
-4. Ticket Transition Mismatch,"The script looked for a button/transition named ""Done"" or ""Resolved"", but Jira's actual workflow transition button was named 'Resolve this issue' (ID 761).",Never guess workflow names. Use a small transition diagnostic script to query /rest/api/3/issue/{key}/transitions to see exact IDs and names.
-5. The Power of Diagnostic Scripts,Trying to fix a master script blindly when something fails.,"Break complex workflows into atomic diagnostic tools. Isolating authentication, searching, and transitions into small standalone tests makes debugging infinitely faster."
+Jira & Active Directory Offboarding Automation: Troubleshooting & Takeaways
+Building an end-to-end automation pipeline across Jira Cloud and on-premise Active Directory comes with unique integration challenges. Below are the key troubleshooting takeaways and technical lessons learned while building and debugging the automated offboarding workflow.
+
+1. Project Keys & Scope (IO vs. KAN)
+The Challenge: Initial queries returned zero results because the script was pointed at the wrong project key (IO vs. KAN), or the search scope was too broad.
+
+The Takeaway: Always verify your exact project keys and identifiers first. When queries fail to return expected data, run a lightweight project-discovery script against the Jira REST API (/rest/api/3/project) to audit all available project names, keys, and IDs before writing complex JQL.
+
+2. Request Types vs. Underlying Issue Types
+The Challenge: The script was filtering by issuetype = "Offboarding", but "Offboarding" was configured as a Request Type (the customer-facing portal form name) rather than the underlying Jira Issue Type (which was actually a standard Service Request or Task).
+
+The Takeaway: In Jira Service Management (JSM), portal request forms do not equal backend issue types. When writing JQL queries for automation, filter by project, status, and populated custom fields rather than relying on human-facing request type names.
+
+3. Custom Field Visibility on Portal Forms
+The Challenge: The custom target username field (customfield_10110) was hidden on the customer portal form layout, causing it to be blank upon submission and skipped by script safety checks.
+
+The Takeaway: Automated scripts that depend on custom metadata will fail if that data isn't collected at the point of submission. Ensure required automation fields are either exposed on the customer request form layout or automatically populated via Jira automation rules. Always include defensive scripting (if (-not $Field) { continue }) to handle blank fields gracefully without crashing the pipeline.
+
+4. Discovering Exact Workflow Transition IDs & Names
+The Challenge: The script tried to transition tickets using generic terms like "Done" or "Resolved", but Jira's actual workflow button was named 'Resolve this issue' (Transition ID 761), causing transition failures.
+
+The Takeaway: Never guess Jira workflow states or transition names. Transition names in JSM often differ from their destination status names. Always query the /rest/api/3/issue/{key}/transitions endpoint dynamically to inspect exact transition IDs and names for your specific workflows.
+
+5. The Power of Atomic Diagnostic Scripts
+The Challenge: Trying to fix a monolithic master script when an API call fails can quickly become overwhelming.
+
+The Takeaway: Break complex integrations down into small, single-purpose diagnostic scripts (e.g., an endpoint inspector, a transition checker, or an unfiltered project dumper). Isolating authentication, searching, and transitions into atomic test scripts makes troubleshooting faster and infinitely less frustrating.
