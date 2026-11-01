@@ -1,6 +1,6 @@
 # Warzone 1 🎮
 
-Status: 🚧 In progress
+Status: **Complete**
 
 *TryHackMe challenge room — Wireshark pcap analysis.*
 
