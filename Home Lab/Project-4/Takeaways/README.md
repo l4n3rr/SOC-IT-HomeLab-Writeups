@@ -3,8 +3,8 @@
 Jira & Active Directory Offboarding Automation: Troubleshooting & Takeaways
 Building an end-to-end automation pipeline across Jira Cloud and on-premise Active Directory comes with unique integration challenges. Below are the key troubleshooting takeaways and technical lessons learned while building and debugging the automated offboarding workflow.
 
-1. Project Keys & Scope (IO vs. KAN)
-The Challenge: Initial queries returned zero results because the script was pointed at the wrong project key (IO vs. KAN), or the search scope was too broad.
+1. Project Keys & Scope 
+The Challenge: Initial queries returned zero results because of improper syntax and mixing up Jira terminology.
 
 The Takeaway: Always verify your exact project keys and identifiers first. When queries fail to return expected data, run a lightweight project-discovery script against the Jira REST API (/rest/api/3/project) to audit all available project names, keys, and IDs before writing complex JQL.
 
@@ -14,7 +14,7 @@ The Challenge: The script was filtering by issuetype = "Offboarding", but "Offbo
 The Takeaway: In Jira Service Management (JSM), portal request forms do not equal backend issue types. When writing JQL queries for automation, filter by project, status, and populated custom fields rather than relying on human-facing request type names.
 
 3. Custom Field Visibility on Portal Forms
-The Challenge: The custom target username field (customfield_10110) was hidden on the customer portal form layout, causing it to be blank upon submission and skipped by script safety checks.
+The Challenge: The custom target username field (customfield_xxxxx) was hidden on the customer portal form layout, causing it to be blank upon submission and skipped by script safety checks.
 
 The Takeaway: Automated scripts that depend on custom metadata will fail if that data isn't collected at the point of submission. Ensure required automation fields are either exposed on the customer request form layout or automatically populated via Jira automation rules. Always include defensive scripting (if (-not $Field) { continue }) to handle blank fields gracefully without crashing the pipeline.
 
