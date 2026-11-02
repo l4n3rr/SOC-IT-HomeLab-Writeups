@@ -1,1 +1,1 @@
-# Step-4: Entra ID
+# Step-4: Entra ID Integration via Microsoft Graph
