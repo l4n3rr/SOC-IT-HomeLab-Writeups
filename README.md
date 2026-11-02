@@ -53,6 +53,8 @@ Links directly to my step-by-step walkthroughs and methodology for each complete
 
 | 🎮 TryHackMe _Challenge Room_ | **Warzone 1** | [View Writeup](./TryHackMe/Rooms/Warzone-1/README.md) |
 
+| 🎮 TryHackMe _Challenge Room_ | **Warzone 2** | [View Writeup](./TryHackMe/Rooms/Warzone-2/README.md) |
+
 
 
 | 🏠 Home Lab | **Project-1** | [View Writeup](./Home%20Lab/Project-1/README.md) |
