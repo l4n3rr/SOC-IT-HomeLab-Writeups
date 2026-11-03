@@ -1,4 +1,4 @@
-# Production Master Script
+# Production Master Script WITH Entra ID
 <#
 .SYNOPSIS
     Automated Hybrid Offboarding Workflow (Active Directory + Entra ID + Jira)
