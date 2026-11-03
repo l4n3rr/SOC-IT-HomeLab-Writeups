@@ -1,4 +1,4 @@
-# Production Master Script
+# Production Master Script BEFORE Entra ID PART
 <#
 .SYNOPSIS
     Automated Single-Script Offboarding Workflow
