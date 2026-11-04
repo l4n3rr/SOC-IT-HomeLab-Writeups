@@ -91,10 +91,9 @@ The final thing I had to do was allow permissions to be able to disable the clou
 FULLY SUCCESSFUL!
 
 
-<img width="923" height="404" alt="Screenshot 2026-11-03 200448" src="https://github.com/user-attachments/assets/61f148c2-fb1c-49c3-909e-a6735cb05188" />
-
-
 This was a damn project in and of itself.
+
+
 Takeaways:
 
 OAuth Authentication: Always distinguish between a client secret's Secret ID (the display identifier/GUID) and its Value (the cryptographic secret string). Using direct REST token requests (Invoke-RestMethod) also bypasses internal module wrapper parsing errors.
