@@ -9,5 +9,4 @@ Intune device management lab, built in a Microsoft 365 Developer Program tenant 
 * [Step-5](./Step-5/README.md): App Deployment
 * [Step-6](./Step-6/README.md): Remote Actions & Conditional Access
 * [Step-7](./Step-7/README.md): Windows Autopilot (Stretch)
-* [Scripts](./Scripts/): PowerShell scripts
 * [Takeaways](./Takeaways/README.md): Lessons learned
