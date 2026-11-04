@@ -1,6 +1,8 @@
 # 📂 Microsoft Intune Lab
 
-Intune device management lab, built in a Microsoft 365 Developer Program tenant — device enrollment, compliance policies, configuration profiles, app deployment, remote actions, and Conditional Access, following the Entra ID work in Project-4.
+Status: 🚧 In progress
+
+Intune device management lab in a Microsoft 365 Developer Program tenant — device enrollment, compliance policies, configuration profiles, app deployment, remote actions, and Conditional Access, building on the Entra ID work in Project-4.
 
 * [Step-1](./Step-1/README.md): Tenant Setup & Test Users
 * [Step-2](./Step-2/README.md): Enroll a Windows VM
