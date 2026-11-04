@@ -3,36 +3,36 @@
 I don't need to do this on my VM literally. This is how to do it below --
 
 1. Open Task Scheduler
-Press Win + R, type taskschd.msc, and hit Enter.
+* Press Win + R, type taskschd.msc, and hit Enter.
 
-In the right-hand actions pane, click Create Task... (not "Create Basic Task", so you get full permission options).
+* In the right-hand actions pane, click Create Task... (not "Create Basic Task", so you get full permission options).
 
 2. Configure General Settings
-Name: Automated Hybrid Offboarding
+* Name: Automated Hybrid Offboarding
 
-Security options:
+* Security options:
 
-Select Run whether user is logged on or not.
+* Select Run whether user is logged on or not.
 
-Check Run with highest privileges (required for Active Directory modifications and module execution).
+* Check Run with highest privileges (required for Active Directory modifications and module execution).
 
-Check Do not store password if running under a managed service account, or select your administrator account credentials.
+* Check Do not store password if running under a managed service account, or select your administrator account credentials.
 
 3. Set the Trigger (Polling Frequency)
-Go to the Triggers tab and click New...
+* Go to the Triggers tab and click New...
 
-Set it to Begin the task: On a schedule.
+* Set it to Begin the task: On a schedule.
 
-Choose Daily (or whatever interval fits your SLA), and under Advanced settings, check Repeat task every: 15 minutes for a duration of Indefinitely.
+* Choose Daily (or whatever interval fits your SLA), and under Advanced settings, check Repeat task every: 15 minutes for a duration of Indefinitely.
 
-Click OK.
+* Click OK.
 
 4. Configure the Action
-Go to the Actions tab and click New...
+* Go to the Actions tab and click New...
 
-Action: Start a program
+* Action: Start a program
 
-Program/script:
+* Program/script:
 
 DOS
 powershell.exe
@@ -45,8 +45,8 @@ DOS
 Click OK.
 
 5. Finalize and Test
-Go to the Conditions and Settings tabs to adjust parameters like waking the computer or stopping the task if it runs longer than 1 hour.
+* Go to the Conditions and Settings tabs to adjust parameters like waking the computer or stopping the task if it runs longer than 1 hour.
 
-Click OK and enter your Windows administrator credentials when prompted.
+* Click OK and enter your Windows administrator credentials when prompted.
 
-Verification: Right-click your new task in the library and click Run. Check your offboard_audit.log file to confirm it executed successfully in the background.
+* Verification: Right-click your new task in the library and click Run. Check your offboard_audit.log file to confirm it executed successfully in the background.
