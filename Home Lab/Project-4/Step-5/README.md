@@ -1,6 +1,9 @@
 # Step-5: Windows Task Scheduler Deployment
+Deciding to skip this and the actual hands-on proof BUT
 
-I don't need to do this on my VM literally. This is how to do it below --
+
+
+This is how to do it below step by step --
 
 1. Open Task Scheduler
 * Press Win + R, type taskschd.msc, and hit Enter.
