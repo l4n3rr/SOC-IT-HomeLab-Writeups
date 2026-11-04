@@ -36,10 +36,12 @@ I don't need to do this on my VM literally. This is how to do it below --
 
 DOS
 powershell.exe
+
+
 Add arguments:
 
 DOS
--ExecutionPolicy Bypass -WindowStyle Hidden -File "C:\Users\Administrator\Desktop\JiraScript\PipelineScripts\Offboard-MasterWithEntraID.ps1"
+-ExecutionPolicy Bypass -WindowStyle Hidden -File "Offboarding Master Script.ps1"
 (Using -WindowStyle Hidden prevents a PowerShell terminal window from popping up on the screen every 15 minutes).
 
 Click OK.
