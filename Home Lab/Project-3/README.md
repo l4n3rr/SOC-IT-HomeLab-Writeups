@@ -1,4 +1,4 @@
-# 📂 Jira & AD Automation - Project
+# 📂 Jira & AD Automation Onboarding - Project
 
 Automated IT Onboarding Pipeline, built with PowerShell, Jira REST API v3, and Windows Server 2022 Active Directory. A new-hire ticket in the Jira IT space triggers the script, which creates the account in the right departmental OU, Finance or IT Support, posts a handover confirmation with no credentials in the ticket, and auto-resolves the ticket on success.
 
