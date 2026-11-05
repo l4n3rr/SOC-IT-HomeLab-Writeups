@@ -1,8 +1,8 @@
 # 📂 ServiceNow Incident Lab
 
-Status: 🚧 In progress
+Status: ✅ Complete
 
-ServiceNow incident management lab in a free Personal Developer Instance — create, triage, prioritize, assign, resolve, and close incidents, with SLA basics and knowledge linking, following the Jira ITSM work in Project-3/4. Fictional test data only.
+Project-6, ServiceNow incident lab, completed November 5, 2026 in a free Personal Developer Instance, Australia release. Fictional test data only. I created, triaged, prioritized, assigned, resolved, and closed test incidents, linked a published knowledge article, and checked queue and SLA views. 
 
 * [Step-1](./Step-1/README.md): Developer Instance Setup
 * [Step-2](./Step-2/README.md): Incident Table & Core Fields
