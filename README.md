@@ -57,6 +57,8 @@ Links directly to my step-by-step walkthroughs and methodology for each complete
 
 | 🎮 TryHackMe _Walkthrough_ | **Incident Handling with Splunk** | [View Writeup](./TryHackMe/Rooms/Incident-Handling-with-Splunk/README.md) |
 
+| 🎮 TryHackMe _Module_ | **Cloud Security for SOC** | [View Writeup](./TryHackMe/Rooms/Cloud-Security-for-SOC/README.md) |
+
 
 
 | 🏠 Home Lab | **Project-1** | [View Writeup](./Home%20Lab/Project-1/README.md) |
